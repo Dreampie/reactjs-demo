@@ -13,10 +13,12 @@ module.exports =
   debug: true
   entry: "./src/App"
   output:
+    publicPath: "/dist/"
     path: "./dist"
     filename: "app.min.js"
   module:
     loaders: [
+      {test: /\.css/, loader: 'style!css'},
       {test: /\.less$/, loader: 'style!css!less'},
       {test: /\.cjsx$/, loaders: ['coffee', 'cjsx']},
       {test: /\.coffee$/, loader: 'coffee'},
@@ -28,7 +30,7 @@ module.exports =
   resolveLoader:
     modulesDirectories: ['node_modules']
   resolve:
-    extensions: ['', '.html', '.less', '.coffee', '.cjsx', '.js']
+    extensions: ['', '.coffee', '.cjsx', '.js', '.html', '.less', '.css']
   plugins: [
     new webpack.optimize.UglifyJsPlugin
     new webpack.BannerPlugin(banner, {raw: true})
