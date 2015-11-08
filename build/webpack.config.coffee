@@ -1,7 +1,6 @@
 webpack = require "webpack"
 HtmlWebpackPlugin = require 'html-webpack-plugin'
 version = require("../package.json").version
-path = require('path')
 
 banner =
   "/**\n" +
