@@ -1,5 +1,7 @@
 webpack = require "webpack"
+HtmlWebpackPlugin = require 'html-webpack-plugin'
 version = require("../package.json").version
+path = require('path')
 
 banner =
   "/**\n" +
@@ -12,6 +14,7 @@ module.exports =
   devtool: 'source-map'
   debug: true
   entry: "./src/App"
+
   output:
     publicPath: "/dist/"
     path: "./dist"
@@ -32,6 +35,7 @@ module.exports =
   resolve:
     extensions: ['', '.coffee', '.cjsx', '.js', '.html', '.less', '.css']
   plugins: [
-    new webpack.optimize.UglifyJsPlugin
-    new webpack.BannerPlugin(banner, {raw: true})
+    new webpack.optimize.UglifyJsPlugin warnings: false
+    new webpack.BannerPlugin banner, raw: true
+    new HtmlWebpackPlugin inject: false, template: 'src/index.html'
   ]

@@ -21,7 +21,7 @@ url = require('url')
 fs = require('fs')
 path = require('path')
 
-index = './index.html'
+index = './dist/index.html'
 
 http.createServer(
   (req, res)->
@@ -44,4 +44,4 @@ http.createServer(
         fs.createReadStream(index).pipe(res)
 ).listen(port)
 
-console.log 'simple static file server runing at port: ' + port + '.'
+console.log 'simple static file server running at port: ' + port + '.'

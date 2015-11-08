@@ -32,12 +32,20 @@
     "url-loader": "^0.5.6",
     "coffee-script": "^1.9.3",
     "cjsx-loader": "^2.0.1",
-    "material-design-icons": "^2.0.0",
-    "material-design-lite": "^1.0.6"
+    "material-ui": "^0.13.0",
+    "less": "^2.5.3",
+    "html-webpack-plugin": "^1.6.2"
   },
   "dependencies": {
     "flux": "^2.0.3",
-    "react": "^0.13.3",
-    "react-router": "^0.13.3"
+    "react": "^0.14.2",
+    "react-router": "^0.13.3",
+    "history": "^1.13.0",
+    "react-dom": "^0.14.0",
+    "react-tap-event-plugin": "^0.2.1",
+    "react-addons-create-fragment": "^0.14.0",
+    "react-addons-pure-render-mixin": "^0.14.0",
+    "react-addons-transition-group": "^0.14.0",
+    "react-addons-update": "^0.14.0"
   }
 }

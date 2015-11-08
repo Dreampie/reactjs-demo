@@ -4,7 +4,7 @@ Link = Router.Link
 State = Router.State
 
 Movies = React.createClass
-  mixins: [State],
+  mixins: [State]
   render: ->
     id = this.getParams().id
     if id
