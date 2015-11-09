@@ -17,13 +17,14 @@
   },
   "homepage": "https://github.com/Dreampie/reactjs-demo#readme",
   "scripts": {
-    "start": "node ./server.js",
+    "start": "open http://localhost:3000",
     "debug": "node debug ./server.js",
-    "build": "webpack --config build/webpack.config.js",
-    "watch": "webpack --config build/webpack.config.js --watch"
+    "build": "webpack --config build/webpack.build.config.js --progress --colors",
+    "watch": "webpack-dev-server --config build/webpack.dev.config.js --progress --colors --watch"
   },
   "devDependencies": {
     "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.10.1",
     "html-loader": "^0.3.0",
     "coffee-loader": "^0.7.2",
     "style-loader": "^0.12.2",
@@ -34,12 +35,13 @@
     "cjsx-loader": "^2.0.1",
     "material-ui": "^0.13.0",
     "less": "^2.5.3",
-    "html-webpack-plugin": "^1.6.2"
+    "html-webpack-plugin": "^1.6.2",
+    "transfer-webpack-plugin": "^0.1.4"
   },
   "dependencies": {
     "flux": "^2.0.3",
     "react": "^0.14.2",
-    "react-router": "^0.13.3",
+    "react-router": "^1.0.0-rc4",
     "history": "^1.13.0",
     "react-dom": "^0.14.0",
     "react-tap-event-plugin": "^0.2.1",

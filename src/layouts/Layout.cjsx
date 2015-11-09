@@ -1,11 +1,12 @@
 React = require "react"
-Router = require "react-router"
-RouteHandler = Router.RouteHandler
-AppBar = require("material-ui").AppBar
+{Router} = require "react-router"
+{AppCanvas, AppBar} = require("material-ui")
 
 Layout = React.createClass
   render: ->
-    <AppBar title="Title" iconClassNameRight="muidocs-icon-navigation-expand-more" />
-    <RouteHandler/>
+    <AppCanvas>
+      <AppBar title="Title" iconClassNameRight="muidocs-icon-navigation-expand-more" />
+      {this.props.children}
+    </AppCanvas>
 
 module.exports = Layout

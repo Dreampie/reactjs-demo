@@ -1,5 +1,6 @@
 webpack = require "webpack"
 HtmlWebpackPlugin = require 'html-webpack-plugin'
+TransferWebpackPlugin = require 'transfer-webpack-plugin'
 version = require("../package.json").version
 
 banner =
@@ -10,10 +11,14 @@ banner =
     " */\n"
 
 module.exports =
+  devServer:
+    contentBase: 'dist'
+    hot: true
+    inline: true
+    port: 3000
   devtool: 'source-map'
   debug: true
   entry: "./src/App"
-
   output:
     publicPath: "/dist/"
     path: "./dist"
@@ -34,7 +39,13 @@ module.exports =
   resolve:
     extensions: ['', '.coffee', '.cjsx', '.js', '.html', '.less', '.css']
   plugins: [
-    new webpack.optimize.UglifyJsPlugin warnings: false
+    new webpack.optimize.UglifyJsPlugin compress:
+      warnings: false
     new webpack.BannerPlugin banner, raw: true
     new HtmlWebpackPlugin inject: false, template: 'src/index.html'
+    new webpack.HotModuleReplacementPlugin()
+    new webpack.NoErrorsPlugin()
+    new TransferWebpackPlugin([
+      from: 'assets/images', to: 'images'
+    ], "src")
   ]
