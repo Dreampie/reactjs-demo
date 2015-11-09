@@ -18,7 +18,11 @@ module.exports =
     port: 3000
   devtool: 'source-map'
   debug: true
-  entry: "./src/App"
+  entry: [
+    'webpack/hot/dev-server'
+    'webpack/hot/only-dev-server'
+    "./src/App"
+  ]
   output:
     publicPath: "/dist/"
     path: "./dist"
@@ -27,9 +31,8 @@ module.exports =
     loaders: [
       {test: /\.css/, loader: 'style!css'},
       {test: /\.less$/, loader: 'style!css!less'},
-      {test: /\.cjsx$/, loaders: ['coffee', 'cjsx']},
+      {test: /\.cjsx$/, loaders: ['react-hot','coffee', 'cjsx']},
       {test: /\.coffee$/, loader: 'coffee'},
-      {test: /\.html$/, loader: "html"},
       {test: /\.(woff|woff2)$/, loader: "url?limit=10000&minetype=application/font-woff"},
       {test: /\.(eot|svg|ttf)$/, loader: "file"},
       {test: /\.(png|jpg|gif)$/, loader: "url-loader"}
@@ -39,13 +42,10 @@ module.exports =
   resolve:
     extensions: ['', '.coffee', '.cjsx', '.js', '.html', '.less', '.css']
   plugins: [
-    new webpack.optimize.UglifyJsPlugin compress:
-      warnings: false
-    new webpack.BannerPlugin banner, raw: true
     new HtmlWebpackPlugin inject: false, template: 'src/index.html'
     new webpack.HotModuleReplacementPlugin()
     new webpack.NoErrorsPlugin()
     new TransferWebpackPlugin([
-      from: 'assets/images', to: 'images'
+      from: 'assets'
     ], "src")
   ]

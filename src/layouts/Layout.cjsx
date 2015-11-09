@@ -8,8 +8,9 @@ Layout = React.createClass
   render: ->
     <AppCanvas>
       <AppBar title="Title" iconClassNameRight="muidocs-icon-navigation-expand-more" />
-      hi,
-      {this.props.children}
+      <div class="content">
+        {this.props.children}
+      </div>
     </AppCanvas>
 
 module.exports = Layout
