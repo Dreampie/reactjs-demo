@@ -18,11 +18,7 @@ module.exports =
     port: 3000
   devtool: 'source-map'
   debug: true
-  entry: [
-    'webpack/hot/dev-server'
-    'webpack/hot/only-dev-server'
-    "./src/App"
-  ]
+  entry: "./src/App"
   output:
     publicPath: "/dist/"
     path: "./dist"
@@ -31,7 +27,7 @@ module.exports =
     loaders: [
       {test: /\.css/, loader: 'style!css'},
       {test: /\.less$/, loader: 'style!css!less'},
-      {test: /\.cjsx$/, loaders: ['react-hot','coffee', 'cjsx']},
+      {test: /\.cjsx$/, loaders: ['react-hot', 'coffee', 'cjsx']},
       {test: /\.coffee$/, loader: 'coffee'},
       {test: /\.(woff|woff2)$/, loader: "url?limit=10000&minetype=application/font-woff"},
       {test: /\.(eot|svg|ttf)$/, loader: "file"},
