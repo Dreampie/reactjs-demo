@@ -6,11 +6,14 @@ require "./layout.less"
 
 Layout = React.createClass
   render: ->
-    <AppCanvas>
-      <AppBar title="Title" iconClassNameRight="muidocs-icon-navigation-expand-more" />
-      <div class="content">
+    <div className="layout">
+      <AppBar className="header" title="Title" iconClassNameRight="muidocs-icon-navigation-expand-more" />
+      <div className="bodyer">
         {this.props.children}
       </div>
-    </AppCanvas>
+      <div className="footer">
+        Footer
+      </div>
+    </div>
 
 module.exports = Layout

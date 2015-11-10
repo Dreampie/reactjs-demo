@@ -32,7 +32,7 @@
     "coffee-script": "^1.9.3",
     "cjsx-loader": "^2.0.1",
     "react-hot-loader":"^v2.0.0-alpha-4",
-    "material-ui": "^0.13.0",
+    "material-ui": "^0.13.2",
     "less": "^2.5.3",
     "html-webpack-plugin": "^2.0.3",
     "transfer-webpack-plugin": "^0.1.4"
