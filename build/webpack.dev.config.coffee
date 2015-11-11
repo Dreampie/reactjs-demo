@@ -23,6 +23,7 @@ module.exports =
     publicPath: "/dist/"
     path: "./dist"
     filename: "app.min.js"
+    chunkFilename: "[name].min.js"
   module:
     loaders: [
       {test: /\.css/, loader: 'style!css'},

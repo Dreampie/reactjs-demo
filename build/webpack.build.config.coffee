@@ -19,11 +19,12 @@ module.exports =
     publicPath: "/dist/"
     path: "./dist"
     filename: "app.min.js"
+    chunkFilename: "[name].min.js"
   module:
     loaders: [
       {test: /\.css/, loader: 'style!css'},
       {test: /\.less$/, loader: 'style!css!less'},
-      {test: /\.cjsx$/, loaders: ['react-hot','coffee', 'cjsx']},
+      {test: /\.cjsx$/, loaders: ['react-hot', 'coffee', 'cjsx']},
       {test: /\.coffee$/, loader: 'coffee'},
       {test: /\.(woff|woff2)$/, loader: "url?limit=10000&minetype=application/font-woff"},
       {test: /\.(eot|svg|ttf)$/, loader: "file"},

@@ -3,10 +3,10 @@ React = require "react"
 createHistory = require("history").createHashHistory
 {Router, Route, Link, State, IndexRoute} = require "react-router"
 
-Layout = require "./layouts/Layout"
-Index = require "./Index"
-Movies = require "./modules/movies/Movies"
-Books = require "./modules/books/Books"
+Layout = require "react-router?name=layout!./layouts/Layout"
+Index = require "react-router?name=index!./Index"
+Movies = require "react-router?name=movies!./modules/movies/Movies"
+Books = require "react-router?name=books!./modules/books/Books"
 
 Routes =
   <Router history={createHistory queryKey: false} onUpdate={-> window.scrollTo(0, 0)}>
