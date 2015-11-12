@@ -16,7 +16,7 @@ module.exports =
   devtool: 'source-map'
   entry: "./src/App"
   output:
-    publicPath: "/dist/"
+    publicPath: "/"
     path: "./dist"
     filename: "js/app.min.js"
     chunkFilename: "js/[name].min.js"
